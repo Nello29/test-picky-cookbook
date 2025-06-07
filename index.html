@@ -821,15 +821,15 @@
 
   <!-- Simple scroll to top functionality -->
   <script>
-    document.querySelectorAll('a[href="#offer-section"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector('header').scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
+  document.querySelectorAll('a[href="#offer-section"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document
+        .querySelector('#offer-section')
+        .scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
 
