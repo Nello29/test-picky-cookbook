@@ -687,12 +687,28 @@
 <div class="af-element">
 <label class="previewLabel" for="awf_field-118149191"></label>
 <div class="af-textWrap">
-<input id="awf_field-118149191" type="text" name="name" class="text" value="Your Full Name" onfocus=" if (this.value == 'Your Full Name') { this.value = ''; }" onblur="if (this.value == '') { this.value='Your Full Name';} " tabindex="500">
+<input
+  id="awf_field-118149191"
+  type="text"
+  name="name"
+  class="text"
+  required
+  onfocus="if(this.value=='Your Full Name'){this.value='';}"
+  onblur="if(this.value==''){this.value='Your Full Name';}"
+  value="Your Full Name" />
 </div>
 <div class="af-clear"></div>
 </div><div class="af-element">
 <label class="previewLabel" for="awf_field-118149192"></label>
-<div class="af-textWrap"><input class="text" id="awf_field-118149192" type="email" name="email" value="Your Email Address" tabindex="501" onfocus=" if (this.value == 'Your Email Address') { this.value = ''; }" onblur="if (this.value == '') { this.value='Your Email Address';}">
+<div class="af-textWrap"><input
+  id="awf_field-118149192"
+  type="email"
+  name="email"
+  class="text"
+  required
+  onfocus="if(this.value=='Your Email Address'){this.value='';}"
+  onblur="if(this.value==''){this.value='Your Email Address';}"
+  value="Your Email Address" />
 </div><div class="af-clear"></div>
 </div><div class="af-element buttonContainer">
 <input name="submit" class="submit" type="submit" value="SEND MY FREE COOKBOOK" tabindex="502">
