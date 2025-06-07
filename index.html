@@ -637,21 +637,33 @@
     }(document, "script", "aweber-wjs-cfzav2zp0"));
 </script>
 
+          <!-- subito sotto, questo è tutto il tuo codice: -->
 <script>
-window.addEventListener('load', function(){
-  var container = document.querySelector('.AW-Form-455630741');
-  function init() {
-    var form = container.querySelector('form');
-    if (!form) return setTimeout(init, 200);
+window.addEventListener('DOMContentLoaded', function(){
+  const container = document.querySelector('.AW-Form-455630741');
+  if (!container) return;
+  const poll = setInterval(() => {
+    const form = container.querySelector('form');
+    if (!form) return;
+    clearInterval(poll);
 
-    // pesca i due campi (adatta i selector se AWeber li cambia)
-    var nameInput  = form.querySelector('input[type="text"], input[name*="name"]');
-    var emailInput = form.querySelector('input[type="email"], input[name*="email"]');
+    // 1) togli eventuale novalidate
+    form.removeAttribute('novalidate');
 
+    // 2) rendi “required” i due campi
+    const nameInput  = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="email"]');
     if (nameInput)  nameInput.required = true;
     if (emailInput) emailInput.required = true;
-  }
-  init();
+
+    // 3) intercetta il submit e fai partire la validazione HTML5
+    form.addEventListener('submit', function(e){
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+      }
+    });
+  }, 200);
 });
 </script>
           
