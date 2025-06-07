@@ -636,6 +636,24 @@
     fjs.parentNode.insertBefore(js, fjs);
     }(document, "script", "aweber-wjs-cfzav2zp0"));
 </script>
+
+<script>
+window.addEventListener('load', function(){
+  var container = document.querySelector('.AW-Form-455630741');
+  function init() {
+    var form = container.querySelector('form');
+    if (!form) return setTimeout(init, 200);
+
+    // pesca i due campi (adatta i selector se AWeber li cambia)
+    var nameInput  = form.querySelector('input[type="text"], input[name*="name"]');
+    var emailInput = form.querySelector('input[type="email"], input[name*="email"]');
+
+    if (nameInput)  nameInput.required = true;
+    if (emailInput) emailInput.required = true;
+  }
+  init();
+});
+</script>
           
           <!-- Fallback form for preview - This will be hidden when AWeber form loads -->
           
